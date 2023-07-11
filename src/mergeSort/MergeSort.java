@@ -2,7 +2,7 @@ package mergeSort;
 
 public class MergeSort {
     // Funcion de ordenamiento.
-    public void merge(int arr[], int left, int middle, int right) {
+    public void merge(int array[], int left, int middle, int right) {
         // Encontramos el tamaño de los sub-vectores para unirlos.
         int n1 = middle - left + 1;
         int n2 = right - middle;
@@ -13,10 +13,10 @@ public class MergeSort {
 
         // Copiamos los datos a los vectores temporales.
         for (int i = 0; i < n1; i++) {
-            leftArray[i] = arr[left + i];
+            leftArray[i] = array[left + i];
         }
         for (int j = 0; j < n2; j++) {
-            rightArray[j] = arr[middle + j + 1];
+            rightArray[j] = array[middle + j + 1];
         }
 
         /* Unimos los vectorestemporales. */
@@ -30,10 +30,10 @@ public class MergeSort {
         // Ordenamiento.
         while (i < n1 && j < n2) {
             if (leftArray[i] <= rightArray[j]) {
-                arr[k] = leftArray[i];
+                array[k] = leftArray[i];
                 i++;
             } else {
-                arr[k] = rightArray[j];
+                array[k] = rightArray[j];
                 j++;
             }
             k++;
@@ -42,13 +42,13 @@ public class MergeSort {
         /* Si quedan elementos por ordenar */
         // Copiamos los elementos restantes de leftArray[].
         while (i < n1) {
-            arr[k] = leftArray[i];
+            array[k] = leftArray[i];
             i++;
             k++;
         }
         // Copiamos los elementos restantes de rightArray[].
         while (j < n2) {
-            arr[k] = rightArray[j];
+            array[k] = rightArray[j];
             j++;
             k++;
         }
