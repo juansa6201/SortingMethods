@@ -1,9 +1,7 @@
 package shellSort;
 
 public class ShellSort {
-    public void shellSort(int array[]) {
-        // Guardamos el largo del array en una variable llamada 'n'.
-        int n = array.length;
+    public void shellsort(int array[], int n) {
         // Dividimos la lista en (n/2) grupos de dos.
         // Clasificamos cada grupo por separado, comparando las parejas de elementos,
         // y si no estan ordenados, los intercambiamos.

@@ -1,13 +1,13 @@
 package quickSort;
 
 public class QuickSort {
-    public void quicksort(int array[], int izq, int der) {
+    public void quicksort(int array[], int left, int right) {
 
         // Tomamos el primer elemento como pivote.
         // Realizamos la busqueda de izquierda a derecha y luego de derecha a izquierda.
-        int pivote = array[izq];
-        int i = izq;
-        int j = der;
+        int pivote = array[left];
+        int i = left;
+        int j = right;
         int aux;
 
         // Mientras no se crucen las busquedas, buscamos el elemento mayor que pivote,
@@ -27,14 +27,14 @@ public class QuickSort {
 
         // Colocamos el pivote en su lugar de forma que tendremos los menores a su
         // izquierda y los mayores a su derecha.
-        array[izq] = array[j];
+        array[left] = array[j];
         array[j] = pivote;
 
         // Ordenamos subarray izquierdo y subarray derecho.
-        if (izq < j - 1)
-            quicksort(array, izq, j - 1);
-        if (j + 1 < der)
-            quicksort(array, j + 1, der);
+        if (left < j - 1)
+            quicksort(array, left, j - 1);
+        if (j + 1 < right)
+            quicksort(array, j + 1, right);
 
     }
 }
