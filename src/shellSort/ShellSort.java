@@ -6,8 +6,8 @@ public class ShellSort {
         int n = array.length;
         // Dividimos la lista en (n/2) grupos de dos.
         // Clasificamos cada grupo por separado, comparando las parejas de elementos,
-        // y si no estan ordenados, se intercambian.
-        // Se divide nuevamente la lista en la mitad de grupos (n/4) y se vuelven a
+        // y si no estan ordenados, los intercambiamos.
+        // Dividimos nuevamente la lista en la mitad de grupos (n/4) y volvemos a
         // clasificar los grupos por separado.
         // Asi susesivamente hasta que el tamaño del salto sea igual a 1.
         for (int interval = n / 2; interval > 0; interval /= 2) {

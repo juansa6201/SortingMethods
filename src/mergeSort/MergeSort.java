@@ -3,15 +3,15 @@ package mergeSort;
 public class MergeSort {
     // Funcion de ordenamiento.
     public void merge(int arr[], int left, int middle, int right) {
-        // Encuentra el tamaño de los sub-vectores para unirlos.
+        // Encontramos el tamaño de los sub-vectores para unirlos.
         int n1 = middle - left + 1;
         int n2 = right - middle;
 
-        // Vectores temporales.
+        // Armamos los vectores temporales.
         int leftArray[] = new int[n1];
         int rightArray[] = new int[n2];
 
-        // Copia los datos a los vectores temporales.
+        // Copiamos los datos a los vectores temporales.
         for (int i = 0; i < n1; i++) {
             leftArray[i] = arr[left + i];
         }
@@ -19,12 +19,12 @@ public class MergeSort {
             rightArray[j] = arr[middle + j + 1];
         }
 
-        /* Une los vectorestemporales. */
+        /* Unimos los vectorestemporales. */
 
-        // Índices inicial del primer y segundo sub-vector.
+        // Instanciamos el indice inicial del primer y segundo sub-vector.
         int i = 0, j = 0;
 
-        // Índice inicial del sub-vector arr[].
+        // Instanciamos el indice inicial del sub-vector arr[].
         int k = left;
 
         // Ordenamiento.
@@ -40,13 +40,13 @@ public class MergeSort {
         } // Fin del while.
 
         /* Si quedan elementos por ordenar */
-        // Copiar los elementos restantes de leftArray[].
+        // Copiamos los elementos restantes de leftArray[].
         while (i < n1) {
             arr[k] = leftArray[i];
             i++;
             k++;
         }
-        // Copiar los elementos restantes de rightArray[].
+        // Copiamos los elementos restantes de rightArray[].
         while (j < n2) {
             arr[k] = rightArray[j];
             j++;
@@ -57,14 +57,14 @@ public class MergeSort {
     // Funcion de division
     public void sort(int arr[], int left, int right) {
         if (left < right) {
-            // Encuentra el punto medio del vector.
+            // Encontramos el punto medio del vector.
             int middle = (left + right) / 2;
 
-            // Divide la primera y segunda mitad (llamada recursiva).
+            // Dividimos la primera y segunda mitad (llamada recursiva).
             sort(arr, left, middle);
             sort(arr, middle + 1, right);
 
-            // Une las mitades.
+            // Unimos las mitades.
             merge(arr, left, middle, right);
         }
     }
